@@ -1,0 +1,57 @@
+.rowtop {
+  margin: 30px 20px auto 40px;
+}
+
+.card {
+  border: none;
+  font-family: "Baloo 2", cursive;
+}
+
+.rightcard {
+  font-size: 20px;
+}
+
+form {
+  font-family: "Baloo 2", cursive;
+}
+
+.rowbottom {
+  text-align: center;
+}
+.rowbottom img {
+  max-width: 40%;
+  margin: 5px auto 25px;
+}
+
+.celsius,
+.fahrenheit {
+  font-size: 30px;
+}
+
+.stick {
+  font-size: 25px;
+  color: #6d757d;
+}
+.displaytemperature {
+  margin: 15px auto 5px;
+  font-size: 100px;
+}
+
+.smalltemperature {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.cityname {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.card-body,
+.text-left {
+  font-size: 20px;
+}
+
+#button-link {
+  margin: 0px 20px;
+}

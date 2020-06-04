@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container rounded border border-white shadow p-3 mb-5 bg-white">
+      <form id="city-form">
+        <div class="row rowtop">
+          <div class="col-4">
+            <div class="form-group entercity">
+              <input
+                type="search"
+                placeholder="Enter your city here"
+                class="form-control border-light shadow p-3 mb-5 bg-white"
+                aria-describedby="cityHelp"
+                id="city-input"
+              />
+            </div>
+          </div>
+          <div class="col-1">
+            <button type="submit" class="btn btn-primary text-white shadow-lg">
+              Search
+            </button>
+          </div>
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary text-white shadow-lg" id='button-link'>
+            📍My location
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="row rowmiddle">
+        <div class="col-sm">
+          <div class="card leftcard h-100 d-inline-block">
+            <img
+              src="images/mostlysunny.gif"
+              class="card-img-top bigimage"
+              alt="partially cloudy"
+            />
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card centralcard h-100 d-inline-block">
+            <div class="card-body">
+              <h5
+                class="card-title cityname font-weight-bold text-primary"
+                id="city-display"
+              >
+                Lisbon
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted displaydate" id="date">
+                Monday 22 July
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted displaytime" id="time">
+                12 pm
+              </h6>
+              <h3 class="card-subtitle text-primary mb-2 displaytemperature">
+                <div class="tempdisplay">
+                  <span id="temperature">28</span>
+                  <span class="celsius"><a href="#" id="celsius-link">°C</a></span>
+                  <span class="stick">|</span>
+                  <span class="fahrenheit"><a href="#" id="fahrenheit-link">°F</a></span>
+                </div>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card rightcard h-100 d-inline-block">
+            <div class="card-body text-left text-muted">
+              <span class="card-text sun">Mostly sunny</span>
+              <span class="card-text sky"></br>Precipitation: 0%</span>
+              <span class="card-text humidity"></br>Humidity: 72%</span>
+              <span class="card-text wind"></br>Wind: NW 7 km/h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row rowbottom">
+        <div class="col-sm">
+          <div class="card bottomfirst">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                Tuesday <br />23/7
+              </h6>
+              <img
+                src="images/mostlysunny.gif"
+                class="card-img-top"
+                alt="partially cloudy"
+              />
+              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
+                25ºC
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="card bottomsecond">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                Wednesday <br />24/7
+              </h6>
+              <img src="images/rain.gif" class="card-img-top" alt="rainy" />
+              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
+                22ºC
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="card bottomthird">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                Thursday <br />25/7
+              </h6>
+              <img src="images/storm.gif" class="card-img-top" alt="storm" />
+              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
+                18ºC
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="card bottomfourth">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                Friday <br />
+                26/7
+              </h6>
+              <img
+                src="images/mostlysunny.gif"
+                class="card-img-top"
+                alt="partially cloudy"
+              />
+              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
+                23ºC
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="card bottomfifth">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                Saturday <br />27/7
+              </h6>
+              <img
+                src="images/mostlysunny.gif"
+                class="card-img-top"
+                alt="partially cloudy"
+              />
+              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
+                26ºC
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
