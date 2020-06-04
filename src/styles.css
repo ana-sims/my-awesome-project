@@ -55,3 +55,8 @@ form {
 #button-link {
   margin: 0px 20px;
 }
+
+#signature {
+  font-family: "Baloo 2", cursive;
+  text-align: center;
+}
