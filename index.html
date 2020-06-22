@@ -51,9 +51,10 @@
         <div class="col-sm">
           <div class="card leftcard h-100 d-inline-block">
             <img
-              src="images/mostlysunny.gif"
-              class="card-img-top bigimage"
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              class="card-img-top"
               alt="partially cloudy"
+              id="icon"
             />
           </div>
         </div>
@@ -86,10 +87,9 @@
         <div class="col-sm">
           <div class="card rightcard h-100 d-inline-block">
             <div class="card-body text-left text-muted">
-              <span class="card-text sun">Mostly sunny</span>
-              <span class="card-text sky"></br>Precipitation: 0%</span>
-              <span class="card-text humidity"></br>Humidity: 72%</span>
-              <span class="card-text wind"></br>Wind: NW 7 km/h</span>
+              <span class="card-text sun" id="description"></span>
+              <span class="card-text humidity"></br>Humidity: <span id="humidity"></span>%</span>
+              <span class="card-text wind"></br>Wind: <span id="wind"></span> km/h</span>
             </div>
           </div>
         </div>
@@ -98,17 +98,18 @@
       <div class="row rowbottom">
         <div class="col-sm">
           <div class="card bottomfirst">
-            <div class="card-body">
-              <h6 class="card-subtitle mb-2 text-muted daydate">
-                Tuesday <br />23/7
+            <div class="card-body" id="forecast">
+              <h6 class="card-subtitle mb-2 text-muted daydate" >
+                <div id="forecast-weekday">Tuesday</div><div id="forecast-date">23/7</div>
               </h6>
               <img
                 src="images/mostlysunny.gif"
                 class="card-img-top"
                 alt="partially cloudy"
+                id="forecast-icon"
               />
-              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
-                25ºC
+              <h6 class="card-subtitle mb-2 text-primary temperaturesmall" id="forecast-temp">
+                25°C
               </h6>
             </div>
           </div>
