@@ -1,6 +1,6 @@
 .weatherapp {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 20px auto 0px;
   padding: 30px;
 }
 
@@ -40,7 +40,7 @@ form {
 }
 .displaytemperature {
   margin: 15px auto 5px;
-  font-size: 100px;
+  font-size: 80px;
 }
 
 .smalltemperature {
@@ -50,7 +50,7 @@ form {
 
 .cityname {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .card-body,
@@ -65,4 +65,8 @@ form {
 #signature {
   font-family: "Baloo 2", cursive;
   text-align: center;
+}
+
+#location {
+  color: #e7305b;
 }
