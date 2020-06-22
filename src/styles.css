@@ -1,16 +1,21 @@
-.weatherapp {
+#container {
   max-width: 800px;
   margin: 20px auto 0px;
   padding: 30px;
 }
 
-.rowtop {
-  margin: 30px 20px auto 40px;
+#form-row {
+  margin: 0 auto;
+}
+
+#top-row {
+  margin: 0 auto;
 }
 
 .card {
   border: none;
   font-family: "Baloo 2", cursive;
+  display: inline-block;
 }
 
 .rightcard {
@@ -38,9 +43,8 @@ form {
   font-size: 25px;
   color: #6d757d;
 }
-.displaytemperature {
-  margin: 15px auto 5px;
-  font-size: 80px;
+#display-temperature {
+  font-size: 100px;
 }
 
 .smalltemperature {
@@ -48,9 +52,17 @@ form {
   font-size: 50px;
 }
 
-.cityname {
+#city-display {
   font-weight: bold;
+  font-size: 30px;
+}
+
+#date-display {
   font-size: 20px;
+}
+
+#description {
+  font-size: 25px;
 }
 
 .card-body,
@@ -73,4 +85,16 @@ form {
 
 .heart {
   color: #007bff;
+}
+
+#icon-main {
+  width: 100px;
+}
+
+#icon {
+  width: 70px;
+}
+
+#forecast-weekday {
+  font-weight: bold;
 }

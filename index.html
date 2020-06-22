@@ -11,104 +11,155 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles.css" />
-    <script src="https://kit.fontawesome.com/12894c39ba.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/12894c39ba.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
-    <div class="container rounded border border-white shadow p-3 mb-5 bg-white weatherapp">
+    <div
+      class="container rounded border border-white shadow p-3 mb-5 bg-white"
+      id="container"
+    >
       <form id="city-form">
-        <div class="row rowtop">
-          <div class="col-6">
+        <div class="row" id="form-row">
+          <div class="col-5">
             <div class="form-group entercity">
               <input
                 type="search"
-                placeholder="Enter your city here"
+                placeholder="Enter city here"
                 class="form-control border-light shadow p-3 mb-5 bg-white"
-                aria-describedby="cityHelp"
+                aria-describedby="enterCity"
                 id="city-input"
               />
             </div>
           </div>
-          <div class="col-1">
+          <div class="col-2">
             <button type="submit" class="btn btn-primary text-white shadow-lg">
               Search
             </button>
           </div>
           <div class="col-4">
-            <button type="submit" class="btn btn-primary text-white shadow-lg" id='button-link'>
-              <i class="fas fa-map-marker-alt"></i> My location
+            <button
+              type="submit"
+              class="btn btn-primary text-white shadow-lg"
+              id="button-link"
+            >
+              <i class="fas fa-map-marker-alt"></i> My Location
             </button>
           </div>
         </div>
       </form>
 
-      <div class="row rowmiddle">
-        <div class="col-sm">
-          <div class="card leftcard h-100 d-inline-block">
-            <img
-              src="http://openweathermap.org/img/wn/01d@2x.png"
-              class="card-img-top"
-              alt="partially cloudy"
-              id="icon"
-            />
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card centralcard h-100 d-inline-block">
+      <div class="row" id="top-row">
+        <div class="col-sm left-card">
+          <div class="card h-100 d-inline-block">
             <div class="card-body">
               <h5
-                class="card-title cityname font-weight-bold text-primary"
+                class="card-title font-weight-bold text-primary"
                 id="city-display"
               >
                 Lisbon
               </h5>
-              <h6 class="card-subtitle mb-2 text-muted displaydate" id="date">
-                Monday 22 July
+              <h6 class="card-subtitle mb-2 text-muted" id="date-display">
+                Monday 23 July
               </h6>
               <h6 class="card-subtitle mb-2 text-muted displaytime" id="time">
-                12 pm
+                Last updated: 12:00 pm
               </h6>
-              <h3 class="card-subtitle text-primary mb-2 displaytemperature">
-                <div class="tempdisplay">
-                  <span id="temperature">28</span>
-                  <span class="celsius"><a href="#" id="celsius-link">°C</a></span>
-                  <span class="stick">|</span>
-                  <span class="fahrenheit"><a href="#" id="fahrenheit-link">°F</a></span>
-                </div>
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card rightcard h-100 d-inline-block">
-            <div class="card-body text-left text-muted">
-              <span class="card-text sun" id="description"></span>
-              <span class="card-text humidity"></br>Humidity: <span id="humidity"></span>%</span>
-              <span class="card-text wind"></br>Wind: <span id="wind"></span> km/h</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row rowbottom">
+      <div class="row" id="center-row">
+        <div class="col-2" id="icon-card">
+          <div class="card-body">
+            <img
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              class="card-img-center"
+              alt="sunny"
+              id="icon-main"
+            />
+          </div>
+        </div>
+        <div class="col-4" id="temperature-card">
+          <div class="card center-card text-center">
+            <h3 class="card-body text-primary mb-2">
+              <div>
+                <span id="display-temperature">28</span>
+                <span class="celsius"
+                  ><a href="#" id="celsius-link"> °C</a></span
+                >
+                <span class="stick">|</span>
+                <span class="fahrenheit"
+                  ><a href="#" id="fahrenheit-link"> °F</a></span
+                >
+              </div>
+            </h3>
+          </div>
+        </div>
+
+        <div class="col-4" id="info-card">
+          <div class="card card-left">
+            <div class="card-body text-left text-muted">
+              <span class="card-text" id="description">Sunny</span>
+              <span class="card-text">
+                <br />Humidity: <span id="humidity">20</span>%</span
+              >
+              <span class="card-text">
+                <br />Wind: <span id="wind">5</span> km/h</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="bottom-row">
         <div class="col-sm">
-          <div class="card bottomfirst">
-            <div class="card-body" id="forecast">
-              <h6 class="card-subtitle mb-2 text-muted daydate" >
-                <div id="forecast-weekday">Tuesday</div><div id="forecast-date">23/7</div>
+          <div class="card">
+            <div class="card-body text-center" id="forecast">
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                <div id="forecast-weekday">Tuesday</div>
+                <div id="forecast-date">July 24</div>
               </h6>
               <img
-                src="images/mostlysunny.gif"
-                class="card-img-top"
-                alt="partially cloudy"
-                id="forecast-icon"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                class="card-img-center"
+                alt="sunny"
+                id="icon"
               />
-              <h6 class="card-subtitle mb-2 text-primary temperaturesmall" id="forecast-temp">
+              <h6 class="card-subtitle mb-2 text-primary text-center">
+                <div>Max. <span id="forecast-temp-max">25</span>°C</div>
+                <div>Min. <span id="forecast-temp-min">25</span>°C</div>
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body text-center" id="forecast">
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                <div id="forecast-weekday">Tuesday</div>
+                <div id="forecast-date">July 24</div>
+              </h6>
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                class="card-img-center"
+                alt="sunny"
+                id="icon"
+              />
+              <h6
+                class="card-subtitle mb-2 text-primary text-center temperaturesmall"
+                id="forecast-temp"
+              >
                 25°C
               </h6>
             </div>
@@ -116,72 +167,83 @@
         </div>
 
         <div class="col-sm">
-          <div class="card bottomsecond">
-            <div class="card-body">
+          <div class="card">
+            <div class="card-body text-center" id="forecast">
               <h6 class="card-subtitle mb-2 text-muted daydate">
-                Wednesday <br />24/7
-              </h6>
-              <img src="images/rain.gif" class="card-img-top" alt="rainy" />
-              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
-                22ºC
-              </h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm">
-          <div class="card bottomthird">
-            <div class="card-body">
-              <h6 class="card-subtitle mb-2 text-muted daydate">
-                Thursday <br />25/7
-              </h6>
-              <img src="images/storm.gif" class="card-img-top" alt="storm" />
-              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
-                18ºC
-              </h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm">
-          <div class="card bottomfourth">
-            <div class="card-body">
-              <h6 class="card-subtitle mb-2 text-muted daydate">
-                Friday <br />
-                26/7
+                <div id="forecast-weekday">Tuesday</div>
+                <div id="forecast-date">July 24</div>
               </h6>
               <img
-                src="images/mostlysunny.gif"
-                class="card-img-top"
-                alt="partially cloudy"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                class="card-img-center"
+                alt="sunny"
+                id="icon"
               />
-              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
-                23ºC
+              <h6
+                class="card-subtitle mb-2 text-primary text-center temperaturesmall"
+                id="forecast-temp"
+              >
+                25°C
               </h6>
             </div>
           </div>
         </div>
 
         <div class="col-sm">
-          <div class="card bottomfifth">
-            <div class="card-body">
+          <div class="card">
+            <div class="card-body text-center" id="forecast">
               <h6 class="card-subtitle mb-2 text-muted daydate">
-                Saturday <br />27/7
+                <div id="forecast-weekday">Tuesday</div>
+                <div id="forecast-date">July 24</div>
               </h6>
               <img
-                src="images/mostlysunny.gif"
-                class="card-img-top"
-                alt="partially cloudy"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                class="card-img-center"
+                alt="sunny"
+                id="icon"
               />
-              <h6 class="card-subtitle mb-2 text-primary temperaturesmall">
-                26ºC
+              <h6
+                class="card-subtitle mb-2 text-primary text-center temperaturesmall"
+                id="forecast-temp"
+              >
+                25°C
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body text-center" id="forecast">
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                <div id="forecast-weekday">Tuesday</div>
+                <div id="forecast-date">July 24</div>
+              </h6>
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                class="card-img-center"
+                alt="sunny"
+                id="icon"
+              />
+              <h6
+                class="card-subtitle mb-2 text-primary text-center temperaturesmall"
+                id="forecast-temp"
+              >
+                25°C
               </h6>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <p id='signature'>Open-source code by<a href="https://github.com/ana-sims/my-awesome-project"> ana-sims</a> <i class="far fa-heart heart"></i></p>
+    <p id="signature">
+      Open-source code by<a
+        href="https://github.com/ana-sims/my-awesome-project"
+      >
+        ana-sims</a
+      >
+      <i class="far fa-heart heart"></i>
+    </p>
     <script src="src/index.js"></script>
   </body>
 </html>

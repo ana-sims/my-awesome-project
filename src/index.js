@@ -1,20 +1,7 @@
-/*Search Display City
-
-let city = document.querySelector("#city-display");
-let cityForm = document.querySelector("#city-form");
-
-function cityDisplay(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
-  city.innerHTML = cityInput.value; //igual ao valor retornado pela API
-}
-
-cityForm = addEventListener("submit", cityDisplay); */
-
 //Date
 
 let now = new Date();
-let date = document.querySelector("#date");
+let date = document.querySelector("#date-display");
 let time = document.querySelector("#time");
 
 let days = [
@@ -58,24 +45,24 @@ time.innerHTML = `${now.getHours()}:${minutes}`;
 
 //Celsius to Fahrenheit
 
-let temperatureSelector = document.querySelector("#temperature");
-let celsiusSelector = document.querySelector("#celsius-link");
-let fahrenheitSelector = document.querySelector("#fahrenheit-link");
+let temperatureElement = document.querySelector("#display-temperature");
+let celsiusElement = document.querySelector("#celsius-link");
+let fahrenheitElement = document.querySelector("#fahrenheit-link");
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperature = Number(temperatureSelector.innerHTML);
-  temperatureSelector.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  let temperature = Number(temperatureElement.innerHTML);
+  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperature = Number(temperatureSelector.innerHTML);
-  temperatureSelector.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+  let temperature = Number(temperatureElement.innerHTML);
+  temperatureElement.innerHTML = Math.round(((temperature - 32) * 5) / 9);
 }
 
-fahrenheitSelector.addEventListener("click", convertToFahrenheit);
-celsiusSelector.addEventListener("click", convertToCelsius);
+fahrenheitElement.addEventListener("click", convertToFahrenheit);
+celsiusElement.addEventListener("click", convertToCelsius);
 
 //Search Engine
 let buttonCurrentLocation = document.querySelector("#button-link");
@@ -83,11 +70,11 @@ let buttonCurrentLocation = document.querySelector("#button-link");
 function showTemperature(response) {
   console.log(response.data);
   let cityElement = document.querySelector("#city-display");
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#display-temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let iconElement = document.querySelector("#icon");
+  let iconElement = document.querySelector("#icon-main");
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -118,15 +105,14 @@ buttonCurrentLocation.addEventListener("click", getPosition);
 let cityForm = document.querySelector("#city-form");
 
 function searchCity(event) {
-  console.log(cityInput.value);
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let apiKey = "9bc8a95bb24bea24e1011758969f01a6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
-
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
+  console.log(cityInput.value);
+  //apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  //axios.get(apiUrl).then(displayForecast);
 }
 
 cityForm.addEventListener("submit", searchCity);
