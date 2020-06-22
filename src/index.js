@@ -43,7 +43,7 @@ if (minutes < 10) {
 
 time.innerHTML = `${now.getHours()}:${minutes}`;
 
-//Celsius to Fahrenheit
+//Unit Conversion
 
 let temperatureElement = document.querySelector("#display-temperature");
 let celsiusElement = document.querySelector("#celsius-link");
@@ -51,14 +51,16 @@ let fahrenheitElement = document.querySelector("#fahrenheit-link");
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperature = Number(temperatureElement.innerHTML);
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  celsiusElement.classList.remove("active");
+  fahrenheitElement.classList.add("active");
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperature = Number(temperatureElement.innerHTML);
-  temperatureElement.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+  celsiusElement.classList.add("active");
+  fahrenheitElement.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 fahrenheitElement.addEventListener("click", convertToFahrenheit);
@@ -79,6 +81,7 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
 
   cityElement.innerHTML = response.data.name;
+
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;

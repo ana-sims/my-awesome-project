@@ -45,6 +45,7 @@ form {
 }
 #display-temperature {
   font-size: 100px;
+  color: #004288;
 }
 
 .smalltemperature {
@@ -55,6 +56,7 @@ form {
 #city-display {
   font-weight: bold;
   font-size: 30px;
+  color: #004288;
 }
 
 #date-display {
@@ -97,4 +99,20 @@ form {
 
 #forecast-weekday {
   font-weight: bold;
+}
+
+#fahrenheit-link,
+#celsius-link {
+  color: #3da4ab;
+}
+
+.active {
+  color: #004288 !important;
+  text-decoration: none;
+}
+
+.active:hover {
+  cursor: default;
+  text-decoration: none;
+  color: #004288;
 }
