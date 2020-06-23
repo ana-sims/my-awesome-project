@@ -112,6 +112,45 @@ buttonCurrentLocation.addEventListener("click", getPosition);
 
 let cityForm = document.querySelector("#city-form");
 
+function formatHours() {}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+            <div class="card">
+            <div class="card-body text-center>
+              <h6 class="card-subtitle mb-2 text-muted daydate">
+                <div id="time-stamp">${formatHours(forecast.dt * 1000)}</div>
+              </h6>
+              <img
+                src="http://openweathermap.org/img/wn/${
+                  forecast.weather[0].icon
+                }@2x.png"
+                class="card-img-center"
+                alt="sunny"
+                id="icon"
+              />
+              <h6 class="card-subtitle mb-2 text-primary text-center">
+                <div><strong>${Math.round(
+                  forecast.main.temp_max
+                )}°C</strong></div>
+                <div class="text-muted">${Math.round(
+                  forecast.main.temp_min
+                )}°C</div>
+              </h6>
+            </div>
+            </div>
+        `;
+  }
+
+  console.log(response.data.list[0]);
+}
+
 function searchCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
@@ -119,26 +158,9 @@ function searchCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
   console.log(cityInput.value);
-  //apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-  //axios.get(apiUrl).then(displayForecast);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput.value}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 cityForm.addEventListener("submit", searchCity);
-
-/*
-function displayForecast(response) {
-  let forecastweekdayElement = document.querySelector("#forecast-weekday");
-  let forecastdateElement = document.querySelector("#forecast-date");
-  let forecasttempElement = document.querySelector("#forecast-temp");
-  let forecasticonElement = document.querySelector("#forecast-icon");
-
-  forecastweekdayElement.innerHTML = null;
-  forecastdateElement.innerHTML = null;
-  forecasttempElement.innerHTML = null;
-  forecasticonElement.innerHTML = null;
-
-  let forecast = null;
-
-  for (let index = 0; index < 6; index++) {
-    forecast = response.data.list[index];
-    forecastElement.innerHTML += */

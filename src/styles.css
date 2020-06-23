@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 #top-row {
   margin: 0 auto;
 }
@@ -72,10 +76,6 @@ form {
   font-size: 20px;
 }
 
-#button-link {
-  margin: 0px 20px;
-}
-
 #signature {
   font-family: "Baloo 2", cursive;
   text-align: center;
@@ -115,4 +115,13 @@ form {
   cursor: default;
   text-decoration: none;
   color: #004288;
+}
+
+.maxtemp {
+  font-weight: bolder;
+}
+
+#time-stamp {
+  color: #6d757d;
+  font-size: 20px;
 }
