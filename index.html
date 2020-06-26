@@ -24,42 +24,12 @@
 
   <body>
     <div
-      class="container rounded border border-white shadow p-3 mb-5"
+      class="container rounded border border-white shadow p-3 mb-3"
       id="container"
     >
-      <form id="city-form">
-        <div class="row" id="form-row">
-          <div class="col-5">
-            <div class="form-group entercity">
-              <input
-                type="search"
-                placeholder="Enter city here"
-                class="form-control border-light shadow p-3 mb-5 bg-white"
-                aria-describedby="enterCity"
-                id="city-input"
-              />
-            </div>
-          </div>
-          <div class="col-2">
-            <button type="submit" class="btn btn-info text-white shadow-lg">
-              Search
-            </button>
-          </div>
-          <div class="col-4">
-            <button
-              type="submit"
-              class="btn btn-info text-white shadow-lg"
-              id="button-link"
-            >
-              <i class="fas fa-map-marker-alt sm-icon"></i> My Location
-            </button>
-          </div>
-        </div>
-      </form>
-
       <div class="row" id="top-row">
-        <div class="col-sm left-card">
-          <div class="card h-100 d-inline-block">
+        <div class="col-5 left-card">
+          <div class="card d-inline-block">
             <div class="card-body">
               <h5 class="card-title font-weight-bold" id="city-display">
                 Lisbon
@@ -73,20 +43,53 @@
             </div>
           </div>
         </div>
+
+        <form id="city-form">
+          <div class="row" id="form-row">
+            <div class="col-7">
+              <div class="form-group entercity">
+                <input
+                  type="search"
+                  placeholder="Enter your city"
+                  class="form-control border-light shadow p-3 mb-5 bg-white"
+                  aria-describedby="enterCity"
+                  id="city-input"
+                />
+              </div>
+            </div>
+            <div class="col">
+              <button
+                type="submit"
+                class="btn btn-info text-white shadow-lg"
+                id="btn-search"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+
+              <button
+                type="submit"
+                class="btn text-white shadow-lg"
+                id="button-link"
+              >
+                <i class="fas fa-map-marker-alt sm-icon"></i>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
 
       <div class="row" id="center-row">
         <div class="col-2" id="icon-card">
           <div class="card-body">
             <img
-              src="http://openweathermap.org/img/wn/01d@2x.png"
+              src="https://openweathermap.org/img/wn/01d@2x.png"
               class="card-img-center"
               alt="sunny"
               id="icon-main"
             />
           </div>
         </div>
-        <div class="col-4" id="temperature-card">
+        <div class="col-6" id="temperature-card">
           <div class="card center-card text-center">
             <h3 class="card-body text-primary mb-2">
               <div>
@@ -103,9 +106,9 @@
           </div>
         </div>
 
-        <div class="col-4" id="info-card">
+        <div class="col-5" id="info-card">
           <div class="card card-left">
-            <div class="card-body text-left text-muted">
+            <div class="card-body text-left text-muted" id="info">
               <span class="card-text" id="description">Sunny</span>
               <span class="card-text">
                 <br />Humidity: <span id="humidity">20</span>%</span
@@ -118,74 +121,135 @@
         </div>
       </div>
 
+      <!-- forecast -->
+
       <div class="row text-center forecast-row" id="forecast">
         <div class="card">
-          <div class="card-body text-center>
-                      <h6 class="card-subtitle mb-2 text-muted daydate">
-            <div id="time-stamp">12:00</div>
+          <div class="card-body text-center">
+            <h6 class="card-subtitle mb-2 text-muted daydate">
+              <div id="time-stamp">09:00</div>
             </h6>
-            <img src="http://openweathermap.org/img/wn/01d@2x.png" class="card-img-center" alt="sunny" id="icon" />
+            <img
+              src="https://openweathermap.org/img/wn/01d@2x.png"
+              class="card-img-center"
+              alt="sunny"
+              id="icon"
+            />
             <h6 class="card-subtitle mb-2 text-primary text-center">
-              <div class="maxtemp"><strong>25°C</strong></div>
-              <div class="text-muted">19°C</div>
+              <br />
+              <div class="maxtemp"><strong>28°C</strong></div>
+              <div class="text-muted">17°C</div>
             </h6>
           </div>
         </div>
+
         <div class="card">
-          <div class="card-body text-center>
-                              <h6 class="card-subtitle mb-2 text-muted daydate">
-            <div id="time-stamp">15:00</div>
+          <div class="card-body text-center">
+            <h6 class="card-subtitle mb-2 text-muted daydate">
+              <div id="time-stamp">12:00</div>
             </h6>
-            <img src="http://openweathermap.org/img/wn/01d@2x.png" class="card-img-center" alt="sunny" id="icon" />
+            <img
+              src="https://openweathermap.org/img/wn/02d@2x.png"
+              class="card-img-center"
+              alt="cloudy"
+              id="icon"
+            />
             <h6 class="card-subtitle mb-2 text-primary text-center">
-              <div><strong>25°C</strong></div>
-              <div class="text-muted">19°C</div>
+              <br />
+              <div class="maxtemp"><strong>27°C</strong></div>
+              <div class="text-muted">26°C</div>
             </h6>
           </div>
-        </div><div class="card">
-          <div class="card-body text-center>
-          <h6 class="card-subtitle mb-2 text-muted daydate">
-            <div id="time-stamp">18:00</div>
+        </div>
+
+        <div class="card">
+          <div class="card-body text-center">
+            <h6 class="card-subtitle mb-2 text-muted daydate">
+              <div id="time-stamp">15:00</div>
             </h6>
-            <img src="http://openweathermap.org/img/wn/01d@2x.png" class="card-img-center" alt="sunny" id="icon" />
+            <img
+              src="https://openweathermap.org/img/wn/03d@2x.png"
+              class="card-img-center"
+              alt="clouds"
+              id="icon"
+            />
             <h6 class="card-subtitle mb-2 text-primary text-center">
-              <div><strong>25°C</strong></div>
-              <div class="text-muted">19°C</div>
+              <br />
+              <div class="maxtemp"><strong>26°C</strong></div>
+              <div class="text-muted">24°C</div>
             </h6>
           </div>
-        </div><div class="card">
-          <div class="card-body text-center>
-                              <h6 class="card-subtitle mb-2 text-muted daydate">
-            <div id="time-stamp">21:00</div>
+        </div>
+
+        <div class="card">
+          <div class="card-body text-center">
+            <h6 class="card-subtitle mb-2 text-muted daydate">
+              <div id="time-stamp">18:00</div>
             </h6>
-            <img src="http://openweathermap.org/img/wn/01d@2x.png" class="card-img-center" alt="sunny" id="icon" />
+            <img
+              src="https://openweathermap.org/img/wn/02d@2x.png"
+              class="card-img-center"
+              alt="cloudy"
+              id="icon"
+            />
             <h6 class="card-subtitle mb-2 text-primary text-center">
-              <div><strong>25°C</strong></div>
-              <div class="text-muted">19°C</div>
+              <br />
+              <div class="maxtemp"><strong>25°C</strong></div>
+              <div class="text-muted">23°C</div>
             </h6>
           </div>
-        </div><div class="card">
-          <div class="card-body text-center>
-                              <h6 class="card-subtitle mb-2 text-muted daydate">
-            <div id="time-stamp">24:00</div>
+        </div>
+
+        <div class="card">
+          <div class="card-body text-center">
+            <h6 class="card-subtitle mb-2 text-muted daydate">
+              <div id="time-stamp">21:00</div>
             </h6>
-            <img src="http://openweathermap.org/img/wn/01d@2x.png" class="card-img-center" alt="sunny" id="icon" />
+            <img
+              src="https://openweathermap.org/img/wn/02n@2x.png"
+              class="card-img-center"
+              alt="cloudy"
+              id="icon"
+            />
             <h6 class="card-subtitle mb-2 text-primary text-center">
-              <div><strong>25°C</strong></div>
+              <br />
+              <div class="maxtemp"><strong>23°C</strong></div>
+              <div class="text-muted">22°C</div>
+            </h6>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body text-center">
+            <h6 class="card-subtitle mb-2 text-muted daydate">
+              <div id="time-stamp">24:00</div>
+            </h6>
+            <img
+              src="https://openweathermap.org/img/wn/01n@2x.png"
+              class="card-img-center"
+              alt="clear sky"
+              id="icon"
+            />
+            <h6 class="card-subtitle mb-2 text-primary text-center">
+              <br />
+              <div class="maxtemp"><strong>20°C</strong></div>
               <div class="text-muted">19°C</div>
             </h6>
           </div>
         </div>
       </div>
+      <!-- forecast -->
     </div>
-    <p id="signature">
+    <!-- container -->
+    <div id="signature">
       Open-source code by<a
         href="https://github.com/ana-sims/my-awesome-project"
+        class="text-info"
       >
         ana-sims</a
       >
       <i class="far fa-heart heart"></i>
-    </p>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>

@@ -1,19 +1,47 @@
+body {
+  background-color: #f2f2f1;
+}
+
 #container {
-  max-width: 800px;
-  margin: 20px auto 0px;
+  max-width: fit-content;
+  margin: 20px auto 10px;
   padding: 30px;
+  background-color: white;
+}
+
+#top-row {
+  margin: 0 auto;
 }
 
 #form-row {
   margin: 0 auto;
 }
 
+form {
+  font-family: "Baloo 2", cursive;
+}
+
+#city-form {
+  margin: 15px 0px;
+}
+
 .btn {
   cursor: pointer;
 }
 
-#top-row {
-  margin: 0 auto;
+#button-link {
+  background-color: #004288;
+  margin: 0 10px 0;
+}
+
+#city-display {
+  font-weight: bold;
+  font-size: 35px;
+  color: #004288;
+}
+
+#date-display {
+  font-size: 20px;
 }
 
 .card {
@@ -26,16 +54,13 @@
   font-size: 20px;
 }
 
-form {
-  font-family: "Baloo 2", cursive;
+#display-temperature {
+  font-size: 100px;
+  color: #004288;
 }
 
-.rowbottom {
-  text-align: center;
-}
-.rowbottom img {
-  max-width: 40%;
-  margin: 5px auto 25px;
+#temperature-card {
+  max-width: fit-content;
 }
 
 .celsius,
@@ -47,58 +72,27 @@ form {
   font-size: 25px;
   color: #6d757d;
 }
-#display-temperature {
-  font-size: 100px;
-  color: #004288;
-}
-
-.smalltemperature {
-  font-weight: bold;
-  font-size: 50px;
-}
-
-#city-display {
-  font-weight: bold;
-  font-size: 30px;
-  color: #004288;
-}
-
-#date-display {
-  font-size: 20px;
-}
-
-#description {
-  font-size: 25px;
-}
 
 .card-body,
 .text-left {
   font-size: 20px;
 }
 
-#signature {
-  font-family: "Baloo 2", cursive;
-  text-align: center;
-}
-
 #location {
   color: #e7305b;
 }
 
-.heart {
-  color: #007bff;
-}
-
 #icon-main {
-  width: 100px;
+  width: 90px;
 }
 
-#icon {
-  width: 70px;
+#description {
+  font-size: 25px;
 }
 
-#forecast-weekday {
+.smalltemperature {
   font-weight: bold;
+  font-size: 50px;
 }
 
 #fahrenheit-link,
@@ -117,11 +111,36 @@ form {
   color: #004288;
 }
 
+#icon {
+  width: 70px;
+}
+
 .maxtemp {
   font-weight: bolder;
+  color: #3da4ab;
 }
 
 #time-stamp {
   color: #6d757d;
   font-size: 20px;
+}
+
+#forecast-row {
+  margin: 0px auto;
+}
+
+#time-stamp {
+  font-size: 18px;
+}
+
+#signature {
+  font-family: "Baloo 2", cursive;
+  font-size: 15px;
+  text-align: center;
+  margin: 20px auto 0px;
+  color: #004288;
+}
+
+.heart {
+  color: #004288;
 }
