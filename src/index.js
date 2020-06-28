@@ -1,3 +1,16 @@
+//Init
+
+function init() {
+  let apiKey = "9bc8a95bb24bea24e1011758969f01a6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=lisbon&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=lisbon&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+init();
+
 //Date
 
 let now = new Date();
