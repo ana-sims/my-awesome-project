@@ -168,7 +168,7 @@ function displayForecast(response) {
                 id="icon"
               />
               <h6 class="card-subtitle mb-2 text-primary text-center">
-                <br /><div><strong>${Math.round(
+                <br /><div class="maxtemp"><strong>${Math.round(
                   forecast.main.temp_max
                 )}°C</strong></div>
                 <div class="text-muted">${Math.round(
@@ -196,3 +196,8 @@ function searchCity(event) {
 }
 
 cityForm.addEventListener("submit", searchCity);
+
+function initGetPosition() {
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+initGetPosition();

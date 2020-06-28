@@ -38,6 +38,7 @@ form {
   font-weight: bold;
   font-size: 35px;
   color: #004288;
+  max-width: 200px;
 }
 
 #date-display {
