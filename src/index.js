@@ -1,7 +1,7 @@
 //Init
 
 function init() {
-  let apiKey = "9bc8a95bb24bea24e1011758969f01a6";
+  let apiKey = "656a6d98c09f6a00425625366a9e51b8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=lisbon&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 
@@ -115,7 +115,7 @@ let celsiusTemperature = null;
 function retrievePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiKey = "9bc8a95bb24bea24e1011758969f01a6";
+  let apiKey = "656a6d98c09f6a00425625366a9e51b8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 
@@ -186,7 +186,7 @@ function displayForecast(response) {
 function searchCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
-  let apiKey = "9bc8a95bb24bea24e1011758969f01a6";
+  let apiKey = "656a6d98c09f6a00425625366a9e51b8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
   console.log(cityInput.value);
